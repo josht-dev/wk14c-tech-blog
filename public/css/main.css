@@ -1,0 +1,115 @@
+/* Page wide styles */
+* {
+  font-family: "Montserrat", serif;
+  scroll-behavior: smooth;
+}
+
+html {
+  border: 1px solid blue;
+  padding: .5rem;
+}
+
+/* Nav Styles */
+header {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  margin: 0 1rem;
+  justify-self: flex-start;
+  height: 3rem;
+}
+
+h1 {
+  width: 20rem;
+  font-size: xx-large;
+  margin: 0 .5rem;
+}
+
+nav {
+  margin: 0 1rem;
+  width: 90%;
+  font-size: x-large;
+}
+
+nav div {
+  display: flex;
+  justify-content: end;
+}
+
+nav a {
+  padding: 0 1rem;
+}
+
+/* Homepage Styles */
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+#homepage {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 49% 49%;
+  gap: 1rem;
+}
+
+article {
+  padding: .5rem;
+  width: 100%;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+h2 {
+  width: 100%;
+  display: inline;
+  font-size: x-large;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+article span {
+  float: right;
+}
+
+/* Login/Register Styles */
+
+/* View Post/Comment Styles */
+
+/* Edit/New Post Styles */
+
+/* Responsive Styles */
+@media screen and (max-width: 719px) {
+  header {
+    justify-content: center;
+  }
+
+  h1 {
+    width: fit-content;
+  }
+
+  nav {
+    position: absolute;
+    top: 3rem;
+    width: 100%;
+  }
+
+  nav div {
+    justify-content: center;
+  }
+
+  main {
+    position: relative;
+    top: 4rem;
+  }
+
+  #homepage {
+    grid-template-columns: 100%;
+  }
+}
