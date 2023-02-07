@@ -100,7 +100,7 @@ article span {
 /* Modal Sytles */
 .modal {
   height: fit-content;
-  width: 50%;
+  width: 60%;
   position: fixed;
   top: 25%;
   z-index: 99;
@@ -109,7 +109,7 @@ article span {
 }
 
 .modal-content {
-  margin: 1rem;
+  margin: 3rem;
   display: block;
   text-align: center;
 }
@@ -149,8 +149,9 @@ form {
 }
 
 .form-btn {
-  width: 5rem;
+  width: fit-content;
   height: 2.5rem;
+  padding: 0 1rem;
   background-color: var(--color-secondary);
   color: var(--color-on-secondary);
   text-transform: uppercase;
