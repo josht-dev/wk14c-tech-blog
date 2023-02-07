@@ -97,6 +97,15 @@ article span {
   float: right;
 }
 
+/* Modal Sytles */
+.modal {
+  position: fixed;
+  top: 50%;
+  z-index: 99;
+  background-color: var(--color-bg-variant);
+  border-radius: var(--border-radius);
+}
+
 /* Login/Register Styles */
 #login-page {
   margin-top: 1rem;
@@ -158,4 +167,9 @@ form {
 /* Hide HTML Elements */
 .hidden {
   display: none;
+}
+
+/* Darken Background Content for Modals */
+.darken {
+  opacity: 0.2;
 }
