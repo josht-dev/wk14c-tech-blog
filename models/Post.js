@@ -18,14 +18,14 @@ Post.init(
       allowNull: false
     },
     summary: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(280),
       allowNull: false,
       validate: {
         len: [280]
       }
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     /*
