@@ -9,21 +9,25 @@
 </section>
 
 <section id="modal-login" class="modal hidden">
-  <div>
+  <div class="modal-content">
     <h2>Login</h2>
     <form action="">
-      <div>
+      <div class="form-div">
         <label for="login-email">Email:</label>
         <input type="email" name="login-email" id="login-email">
       </div>
-      <div>
+      <div class="form-div">
         <label for="login-password">Password:</label>
         <input type="password" name="login-password" id="login-password">
       </div>
-      <div>
-        <button type="submit">login</button>
+      <div class="form-div form-div-submit">
+        <button type="submit" class="form-btn">login</button>
       </div>
     </form>
+    <div class="footer">
+      <h3>Not a member yet?</h3>
+      <a href="#" onclick="openModal('modal-signup', 'homepage')">Create an account now.</a>
+    </div>
   </div>
 </section>
 
