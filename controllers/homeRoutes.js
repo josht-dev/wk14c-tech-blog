@@ -6,22 +6,21 @@ router.get('/', async (req, res) => {
   try {
     // Get posts db data
     const postsData = await Post.findAll({
-      include: [{ model: User }]
+      include: [{ model: User, attributes: ['name'] }]
     });
     const posts = postsData.map((post) => post.get({ plain:true }));
-    
-    // Remove sensitive data before sending over to user
-    posts.forEach(post => {
-      delete post.user.email;
-      delete post.user.password;
-    });
-
+  
     // Send handlebars page to user
     res.render('homepage', { posts });
   } catch(err) {
     console.log(err);
     res.status(500).json(err);
   }
+});
+
+router.get('/login', (req, res) => {
+  
+  res.render('login');
 });
 
 module.exports = router;

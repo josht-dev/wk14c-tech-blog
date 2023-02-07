@@ -18,19 +18,18 @@ header {
 }
 
 header img {
-  margin: 0 1rem;
+  margin: 0 .5rem;
   justify-self: flex-start;
   height: 3rem;
 }
 
 h1 {
-  width: 20rem;
+  width: 25rem;
   font-size: xx-large;
   margin: 0 .5rem;
 }
 
 nav {
-  margin: 0 1rem;
   width: 90%;
   font-size: x-large;
 }
@@ -55,7 +54,7 @@ main {
 #homepage {
   display: grid;
   width: 100%;
-  grid-template-columns: 49% 49%;
+  grid-template-columns: 100%;
   gap: 1rem;
 }
 
@@ -79,6 +78,32 @@ article span {
 }
 
 /* Login/Register Styles */
+#login-page {
+  margin-top: 1rem;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 49% 49%;
+  gap: 1rem;
+}
+
+.login {
+  padding: .25rem .5rem;
+ 
+  
+
+  border: 1px solid red;
+}
+
+.login h2 {
+ 
+  
+}
+
+form {
+ 
+  position: relative;
+  top: .5rem;
+}
 
 /* View Post/Comment Styles */
 
@@ -107,9 +132,5 @@ article span {
   main {
     position: relative;
     top: 4rem;
-  }
-
-  #homepage {
-    grid-template-columns: 100%;
   }
 }
