@@ -2,8 +2,8 @@
   {{#each posts as |post|}}
     <article>
       <h2>{{post.title}}</h2>
-      <p>{{post.summary}}</p>
       <span>Posted by {{post.user.name}} on {{format_date post.createdAt}}</span>
+      <p>{{post.summary}}</p>
     </article>
   {{/each}}
 </section>
