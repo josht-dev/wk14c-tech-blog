@@ -18,5 +18,10 @@
     "name": "Jeff",
     "email": "jeff@gmail.com",
     "password": "jeff12345password"
+  },
+  {
+    "name": "The Josh",
+    "email": "toasterrage@gmail.com",
+    "password": "thetechblog2023"
   }
 ]
