@@ -1,4 +1,4 @@
-<section id="homepage">
+<section id="homepage" onclick="closeModals()">
   {{#each posts as |post|}}
     <article>
       <h2>{{post.title}}</h2>
@@ -8,7 +8,7 @@
   {{/each}}
 </section>
 
-<section id="login-modal" class="hidden">
+<section id="modal-login" class="hidden">
   <div>
     <h2>Login</h2>
     <form action="">
@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<section id="signup-modal" class="hidden">
+<section id="modal-signup" class="hidden">
   <div>
     <h2>Register</h2>
     <form action="">

@@ -154,3 +154,8 @@ form {
     top: 4rem;
   }
 }
+
+/* Hide HTML Elements */
+.hidden {
+  display: none;
+}
