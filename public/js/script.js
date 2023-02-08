@@ -13,7 +13,11 @@ const darkenContent = (id) => {
 }
 
 // Open modal
-const openModal = (modalId, contentId) => {
+const openModal = (modalId, contentId, closeId) => {
+  // Close any indicated modal
+  if (closeId) {
+    toggleHidden(closeId);
+  }
   toggleHidden(modalId);
   // Darken the rest of the content if not already darkened
   if (!contentDarken) {
