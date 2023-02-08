@@ -24,14 +24,13 @@ const sess = {
     })
 };
 
+app.use(session(sess));
 
 // *****Express*****
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(routes);
-
-app.use(session(sess));
 
 // // *****Handlebars*****
 app.engine('handlebars', hbs.engine);

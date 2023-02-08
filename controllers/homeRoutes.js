@@ -11,16 +11,15 @@ router.get('/', async (req, res) => {
     const posts = postsData.map((post) => post.get({ plain:true }));
   
     // Send handlebars page to user
-    res.render('homepage', { posts });
+    res.render('homepage', { 
+      posts,
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId
+    });
   } catch(err) {
     console.log(err);
     res.status(500).json(err);
   }
-});
-
-router.get('/login', (req, res) => {
-  
-  res.render('login');
 });
 
 module.exports = router;
