@@ -1,7 +1,9 @@
 <section id="dashboard">
   <div id="dashboard-header">
     <h2 id="dashboard-title">My Dashboard</h2>
-    <button onclick="addNewPost()">add new post</button>
+    <div id="dashboard-btn">
+      <button onclick="addNewPost()">add new post</button>
+    </div>
   </div>
   {{#each posts as |post|}}
     <article>
