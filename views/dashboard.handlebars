@@ -2,7 +2,7 @@
   <div id="dashboard-header">
     <h2 id="dashboard-title">My Dashboard</h2>
     <div id="dashboard-btn">
-      <button onclick="addNewPost()">add new post</button>
+      <a href="/api/dashboard/:id/add-post"><button onclick="addNewPost()">add new post</button></a>
     </div>
   </div>
   {{#each posts as |post|}}
@@ -12,4 +12,6 @@
       <p>{{post.summary}}</p>
     </article>
   {{/each}}
+  <!-- Page specific frontend scripts -->
+  <script src="/js/dashboard.js"></script>
 </section>
