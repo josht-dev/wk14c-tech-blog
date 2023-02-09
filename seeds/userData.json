@@ -23,5 +23,10 @@
     "name": "The Josh",
     "email": "toasterrage@gmail.com",
     "password": "thetechblog2023"
+  },
+  {
+    "name": "TestAccount",
+    "email": "test@gmail.com",
+    "password": "thetechblog2023"
   }
 ]
