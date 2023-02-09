@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const bcrypt = require('bcrypt');
 
 // Post /api/users/ route to create a user
 router.post('/', async (req, res) => {
@@ -10,43 +11,31 @@ router.post('/', async (req, res) => {
 // Post /api/users/login route to login
 router.post('/login', async (req, res) => {
   try {
-    console.log('req body');
-    console.log(req.body);
-
-    const errMessage = 'Incorrect email or password!';
-
-    // Get user from db
+    const errMsg = 'Incorrect email or password!';
     const userData = await User.findOne({
-      raw: true,
-      where: {
-        email: req.body.email
-      }
+      where: { email: req.body.loginEmail }
     });
-
-    console.log('userdata');
-    console.log(userData);
-
-    // Check for user in db
+ 
+    // Email check
     if (!userData) {
-      res.status(400).json({ message: errMessage });
-      return;
+      res.status(400).json({ message: errMsg });
     }
 
-    // Check for correct password
-    const validPw = await userData.checkPassword(req.body.password);
-    if (!validPw) {
-      res.status(400).json({ message: errMessage });
-      return;
+    // Password Check
+    const validPassword = await userData.checkPassword(req.body.loginPassword);
+    if (!validPassword) {
+      res.status(400).json({ message: errMsg });
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      res.redirect('../');
+      req.session.userId = userData.dataValues.id;
+      res.redirect('/');
     });
-
-
-  } 
-  catch (err) {res.status(500).json(err);}
+  }
+  catch (err) { 
+    console.info(err);
+    res.status(400).json(err) }
 });
 
 // Post /api/users/logout route to logout

@@ -11,14 +11,14 @@
 <section id="modal-login" class="modal hidden">
   <div class="modal-content">
     <h2>Login</h2>
-    <form action="">
+    <form action="/api/users/login" method="post">
       <div class="form-div">
-        <label for="login-email">Email:</label>
-        <input type="email" name="login-email" id="login-email">
+        <label for="loginEmail">Email:</label>
+        <input type="email" name="loginEmail" id="loginEmail">
       </div>
       <div class="form-div">
-        <label for="login-password">Password:</label>
-        <input type="password" name="login-password" id="login-password">
+        <label for="loginPassword">Password:</label>
+        <input type="password" name="loginPassword" id="loginPassword">
       </div>
       <div class="form-div form-div-submit">
         <button type="submit" class="form-btn">login</button>
