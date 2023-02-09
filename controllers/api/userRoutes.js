@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const bcrypt = require('bcrypt');
 
 // GET /api/users/ route to get all user
+// Only used for backend troubleshooting
 router.get('/', async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -16,6 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET /api/users/:id route to get a user
+// Only used for backend troubleshooting
 router.get('/:id', async (req, res) => {
   try {
     const userData = await User.findByPk(req.params.id, {
