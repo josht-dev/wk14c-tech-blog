@@ -29,7 +29,6 @@ const postData = [
     user_id: 6, 
     createdAt: '2023-01-16 19:55:27'
   },
-  ,
   {
     title: 'To asynchronous or to not synchronous',
     summary: 'The pros and cons to coding with asynchronous functions.',
