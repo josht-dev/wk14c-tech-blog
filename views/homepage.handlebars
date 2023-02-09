@@ -34,22 +34,18 @@
 <section id="modal-signup" class="modal hidden">
   <div class="modal-content">
     <h2>Register</h2>
-    <form action="">
+    <form action="/api/users" method="post">
       <div class="form-div">
-        <label for="register-username">Username:</label>
-        <input type="text" name="register-username" id="register-username">
+        <label for="registerUsername">Username:</label>
+        <input type="text" name="registerUsername" id="registerUsername">
       </div>
       <div class="form-div">
-        <label for="register-email">Email:</label>
-        <input type="email" name="register-email" id="register-email">
+        <label for="registerEmail">Email:</label>
+        <input type="email" name="register-email" id="registerEmail">
       </div>
       <div class="form-div">
-        <label for="register-password">Password:</label>
-        <input type="password" name="register-password" id="register-password">
-      </div>
-      <div class="form-div">
-        <label for="register-password-confirm">Confirm Password:</label>
-        <input type="password" name="register-password-confirm" id="register-password-confirm">
+        <label for="registerPassword">Password:</label>
+        <input type="password" name="registerPassword" id="registerPassword">
       </div>
       <div class="form-div form-div-submit">
         <button type="submit" class="form-btn">create an account</button>
