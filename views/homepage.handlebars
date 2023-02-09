@@ -1,11 +1,5 @@
 <section id="homepage" onclick="closeModals('homepage')">
-  {{#each posts as |post|}}
-    <article>
-      <h2>{{post.title}}</h2>
-      <span>Posted by {{post.user.name}} on {{format_date post.createdAt}}</span>
-      <p>{{post.summary}}</p>
-    </article>
-  {{/each}}
+  {{> all-posts}}
 </section>
 
 <section id="modal-login" class="modal hidden">
