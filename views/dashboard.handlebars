@@ -1,0 +1,13 @@
+<section id="dashboard">
+  <div id="dashboard-header">
+    <h2 id="dashboard-title">My Dashboard</h2>
+    <button onclick="addNewPost()">add new post</button>
+  </div>
+  {{#each posts as |post|}}
+    <article>
+      <h2>{{post.title}}</h2>
+      <span>Posted by {{post.user.name}} on {{format_date post.createdAt}}</span>
+      <p>{{post.summary}}</p>
+    </article>
+  {{/each}}
+</section>
