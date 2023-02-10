@@ -31,6 +31,11 @@ button {
   border-radius: var(--border-radius);
 }
 
+textarea {
+  resize: none;
+  border: .1rem solid var(--color-secondary);
+}
+
 /* Nav Styles */
 header {
   width: 100%;
