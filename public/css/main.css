@@ -31,6 +31,10 @@ button {
   border-radius: var(--border-radius);
 }
 
+input {
+  border: .1rem solid var(--color-secondary);
+}
+
 textarea {
   resize: none;
   border: .1rem solid var(--color-secondary);
