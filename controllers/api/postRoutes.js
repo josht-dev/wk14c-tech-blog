@@ -6,13 +6,17 @@ router.get('/:id', async (req, res) => {
   try {
     const post = await Post.findByPk(req.params.id, {
       raw: true,
+      nest: true,
+      include: [{ model: User, attributes: ['name'] }]
     });
+
     const commentData = await Comment.findAll({
       where: { post_id: req.params.id },
       include: [{ model: User, attributes: ['name'] }]
     });
     const comments = commentData.map((comment) => comment.get({ plain: true }));
-
+    
+    console.info(post);
     res.render('post', {
       post,
       comments,

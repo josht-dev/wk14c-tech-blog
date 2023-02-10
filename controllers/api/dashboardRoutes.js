@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post } = require('../../models');
+const { Post, User } = require('../../models');
 
 // GET /api/dashboard/:id route to get the users dashboard
 router.get('/:id', async (req, res) => {
@@ -7,7 +7,9 @@ router.get('/:id', async (req, res) => {
     // Get user's posts from db
     const posts = await Post.findAll({
       raw: true,
-      where: { user_id: req.params.id }
+      nest: true,
+      where: { user_id: req.params.id },
+      include: [{ model: User, attributes: ['name'] }]
     });
 
     // Send dashboard handlebars
