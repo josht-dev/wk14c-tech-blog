@@ -23,4 +23,17 @@ router.get('/:id', async (req, res) => {
   catch(err) {res.status(500).json(err);}
 });
 
+// POST /api/post/add-comment/:postId/:userId route to add comment to post
+router.post('/add-comment/:postId/:userId', async (req, res) => {
+  try {
+    const comment = await Comment.create({
+      content: req.body.newComment,
+      user_id: req.params.userId,
+      post_id: req.params.postId
+    });
+    res.redirect(`/api/post/${req.params.postId}`);
+  } 
+  catch (err) { res.status(500).json(err); }
+});
+
 module.exports = router;
