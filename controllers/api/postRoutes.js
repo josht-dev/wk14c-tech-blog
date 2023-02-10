@@ -12,9 +12,6 @@ router.get('/:id', async (req, res) => {
       include: [{ model: User, attributes: ['name'] }]
     });
     const comments = commentData.map((comment) => comment.get({ plain: true }));
-    console.info(post);
-    console.info(comments);
-    //res.status(201).json(post);
 
     res.render('post', {
       post,
