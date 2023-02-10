@@ -17,7 +17,6 @@
 }
 
 html {
-  border: 1px solid blue;
   padding: .5rem;
   background-color: var(--color-bg);
 }
@@ -42,6 +41,7 @@ header {
   align-items: center;
   background-color: var(--color-primary);
   color: var(--color-on-primary);
+  z-index: 1;
 }
 
 header img {
@@ -130,7 +130,7 @@ article span {
   font-size: 3rem;
 }
 
-form {
+.login-register-form {
   width: 80%;
   margin: auto;
   display: grid;
@@ -204,6 +204,22 @@ form {
 
 h4 {
   margin-top: 1rem;
+}
+
+.comment-form {
+  padding: .5rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--color-bg-variant);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.comment-form button {
+  margin-left: auto;
 }
 
 /* Edit/New Post Styles */

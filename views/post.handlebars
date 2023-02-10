@@ -15,9 +15,9 @@
   {{#if loggedIn}}
     <!-- Post a comment -->
     <div id="leave-comment"></div>
-      <form action="/api/post/add-comment" method="post">
+      <form action="/api/post/add-comment" method="post" class="comment-form">
         <label for="newComment">Leave a Comment</label>
-        <textarea name="newComment" id="newComment" cols="30" rows="10"></textarea>
+        <textarea name="newComment" id="newComment" cols="30" rows="2"></textarea>
         <button type="submit">Save</button>
       </form>
     </div>
@@ -26,10 +26,11 @@
 
 <!-- TODO - Implement the login/register or homepage/post pages as partials -->
 <!-- TODO - Change login to send user back to their previous page instead of homepage -->
+{{#unless loggedIn}}
 <section id="modal-login" class="modal hidden">
   <div class="modal-content">
     <h2>Login</h2>
-    <form action="/api/users/login" method="post">
+    <form action="/api/users/login" method="post" class="login-register-form">
       <div class="form-div">
         <label for="loginEmail">Email:</label>
         <input type="email" name="loginEmail" id="loginEmail">
@@ -52,7 +53,7 @@
 <section id="modal-signup" class="modal hidden">
   <div class="modal-content">
     <h2>Register</h2>
-    <form action="/api/users" method="post">
+    <form action="/api/users" method="post" class="login-register-form">
       <div class="form-div">
         <label for="registerUsername">Username:</label>
         <input type="text" name="registerUsername" id="registerUsername">
@@ -74,7 +75,10 @@
       <a href="#" onclick="openModal('modal-login', 'homepage', 'modal-signup')">Create an account now.</a>
     </div>
   </div>
+  {{/unless}}
   <!-- Page specific frontend scripts -->
+  {{#unless loggedIn}}
   <script src="/js/homepage.js"></script>
+  {{/unless}}
   <script src="/js/post.js"></script>
 </section>

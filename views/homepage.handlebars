@@ -8,10 +8,11 @@
   {{/each}}
 </section>
 
+{{#unless loggedIn}}
 <section id="modal-login" class="modal hidden">
   <div class="modal-content">
     <h2>Login</h2>
-    <form action="/api/users/login" method="post">
+    <form action="/api/users/login" method="post" class="login-register-form">
       <div class="form-div">
         <label for="loginEmail">Email:</label>
         <input type="email" name="loginEmail" id="loginEmail">
@@ -34,7 +35,7 @@
 <section id="modal-signup" class="modal hidden">
   <div class="modal-content">
     <h2>Register</h2>
-    <form action="/api/users" method="post">
+    <form action="/api/users" method="post" class="login-register-form">
       <div class="form-div">
         <label for="registerUsername">Username:</label>
         <input type="text" name="registerUsername" id="registerUsername">
@@ -56,7 +57,10 @@
       <a href="#" onclick="openModal('modal-login', 'homepage', 'modal-signup')">Create an account now.</a>
     </div>
   </div>
+  {{/unless}}
   <!-- Page specific frontend scripts -->
+  {{#unless loggedIn}}
   <script src="/js/homepage.js"></script>
+  {{/unless}}
   <script src="/js/post.js"></script>
 </section>
