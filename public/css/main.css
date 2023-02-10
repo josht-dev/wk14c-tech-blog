@@ -78,7 +78,7 @@ main {
   margin: 0;
 }
 
-#homepage, #dashboard {
+#homepage, #dashboard, #post {
   display: grid;
   width: 100%;
   position: relative;
@@ -197,9 +197,14 @@ form {
   float: right;
 }
 
-
-
 /* View Post/Comment Styles */
+#comments {
+  opacity: 0.5;
+}
+
+h4 {
+  margin-top: 1rem;
+}
 
 /* Edit/New Post Styles */
 

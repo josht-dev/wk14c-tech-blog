@@ -3,24 +3,25 @@
     <h2>{{post.title}}</h2>
     <span>Posted by {{post.user.name}} on {{format_date post.createdAt}}</span>
     <p>{{post.content}}</p>
-  </article>
-  <!-- Load comments -->
-  <h4>Comments</h4>
-  <article id="comments">
-    {{#each comments as |comment|}}
-      <div class="comment">
-        <span>{{comment.user.name}}: {{comment.content}}</span>
-      </div>
-    {{/each}}
-  </article>
-  {{#if loggedIn}}
-    <!-- Post a comment -->
-    <div id="leave-comment"></div>
-      <form action="/api/post/add-comment" method="post">
-        <label for="newComment">Leave a Comment</label>
-        <textarea name="newComment" id="newComment" cols="30" rows="10"></textarea>
-        <button type="submit">Save</button>
-      </form>
+    <!-- Load comments -->
+    <div id="comments">
+      <h4>Comments</h4>
+      {{#each comments as |comment|}}
+
+      <p>{{comment.user.name}}: {{comment.content}}</p>
+
+      {{/each}}
     </div>
+  </article>
+
+  {{#if loggedIn}}
+  <!-- Post a comment -->
+  <div id="leave-comment"></div>
+  <form action="/api/post/add-comment" method="post">
+    <label for="newComment">Leave a Comment</label>
+    <textarea name="newComment" id="newComment" cols="30" rows="10"></textarea>
+    <button type="submit">Save</button>
+  </form>
+  </div>
   {{/if}}
 </section>
