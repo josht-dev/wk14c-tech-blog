@@ -6,6 +6,7 @@
   --color-on-secondary: #FFFFFF;
   --color-bg: #F7F8F9;
   --color-bg-variant: #FFF;
+  --color-error: #FF505F;
   --border-radius: .25rem;
   --box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12);
 }
@@ -38,6 +39,10 @@ input {
 textarea {
   resize: none;
   border: .1rem solid var(--color-secondary);
+}
+
+section {
+  padding-bottom: 1rem;
 }
 
 /* Nav Styles */
@@ -87,7 +92,7 @@ main {
   margin: 0;
 }
 
-#homepage, #dashboard, #post {
+#homepage, #dashboard, #post, #edit-post {
   display: grid;
   width: 100%;
   position: relative;
@@ -96,7 +101,7 @@ main {
   gap: 1rem;
 }
 
-article {
+article, #edit-form {
   padding: .5rem;
   width: 100%;
   height: fit-content;
@@ -232,6 +237,19 @@ h4 {
 }
 
 /* Edit/New Post Styles */
+#btn-delete {
+  background-color: var(--color-bg);
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+#post-content {
+  height: fit-content;
+}
+
+#content {
+  width: 100%;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 719px) {
