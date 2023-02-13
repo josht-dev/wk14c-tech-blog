@@ -1,6 +1,20 @@
 const router = require('express').Router();
 const { Post, User } = require('../../models');
 
+
+// GET /api/dashboard/new route to get the new post page
+router.get('/new', async (req, res) => {
+  try {
+    console.info('test');
+    // Send dashboard handlebars
+    res.render('new-post', {
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId
+    });
+  }
+  catch (err) { res.status(500).json(err); }
+});
+
 // GET /api/dashboard/:id route to get the users dashboard
 router.get('/:id', async (req, res) => {
   try {
@@ -22,7 +36,7 @@ router.get('/:id', async (req, res) => {
   catch (err) { res.status(500).json(err); }
 });
 
-// GET /api/dashboard/edit/:id
+// GET /api/dashboard/edit-post/:id to get the user the edit-post page
 router.get('/edit-post/:id', async (req, res) => {
   // Get post data for edit
   const post = await Post.findByPk(req.params.id, { raw: true });

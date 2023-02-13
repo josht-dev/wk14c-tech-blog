@@ -1,0 +1,22 @@
+<section id="edit-post">
+  <div id="dashboard-header">
+    <h2 id="dashboard-title">New Post</h2>
+  </div>
+  <form action="/api/dashboard/new/{{userId}}" method="post" id="edit-form">
+    <div id="post-title" class="form-div">
+      <label for="title">Post Title</label>
+      <input type="text" name="title" id="title">
+    </div>
+    <div id="post-summary" class="form-div">
+      <label for="summary">Post Summary</label>
+      <input type="text" name="summary" id="summary">
+    </div>
+    <div id="post-content" class="form-div">
+      <label for="content">Full Post Content</label>
+      <textarea name="content" id="content" cols="30" rows="40"></textarea>
+    </div>
+  </form>
+  <div class="form-div">
+    <button type="submit" form="edit-form">Save Change</button>
+  </div>
+</section>
