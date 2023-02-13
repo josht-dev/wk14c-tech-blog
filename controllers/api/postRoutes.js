@@ -10,13 +10,13 @@ router.get('/:id', async (req, res) => {
       include: [{ model: User, attributes: ['name'] }]
     });
 
-    const commentData = await Comment.findAll({
+    const comments = await Comment.findAll({
+      raw: true,
+      nest: true,
       where: { post_id: req.params.id },
       include: [{ model: User, attributes: ['name'] }]
     });
-    const comments = commentData.map((comment) => comment.get({ plain: true }));
-    
-    console.info(post);
+ 
     res.render('post', {
       post,
       comments,

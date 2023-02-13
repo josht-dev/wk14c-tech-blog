@@ -1,4 +1,8 @@
+{{#unless loggedIn}}
 <section id="homepage" onclick="closeModals('homepage')">
+{{else}}
+<section id="homepage"">
+{{/unless}}
   {{#each posts as |post|}}
     <article data-id="{{post.id}}" data-owner-id="{{post.user_id}}" onclick="loadPost({{post.id}})">
       <h2>{{post.title}}</h2>

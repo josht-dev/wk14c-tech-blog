@@ -2,7 +2,7 @@
   <div id="dashboard-header">
     <h2 id="dashboard-title">Edit</h2>
   </div>
-  <form action="/api/post/:id/update" method="put" id="edit-form">
+  <form action="/api/dashboard/:id" method="put" id="edit-form">
     <div id="post-title">
       <label for="title">Post Title</label>
       <input type="text" name="title" id="title">
@@ -17,6 +17,6 @@
     </div>
   </form>
   <button type="submit" form="edit-form">Save Change</button>
-  <form action="/api/post/:id/delete" method="delete" id="delete-form" class="hidden"></form>
+  <form action="/api/dashboard/:id" method="delete" id="delete-form" class="hidden"></form>
   <button type="submit" form="delete-form">Delete Post</button>
 </section>

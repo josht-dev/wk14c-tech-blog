@@ -22,4 +22,23 @@ router.get('/:id', async (req, res) => {
   catch (err) { res.status(500).json(err); }
 });
 
+// GET /api/dashboard/edit/:id
+router.get('/edit-post/:id', async (req, res) => {
+  // Get post data for edit
+  const post = await Post.findByPk(req.params.id, { raw: true });
+
+  // Send dashboard handlebars
+  res.render('edit-post', {
+    post,
+    loggedIn: req.session.loggedIn,
+    userId: req.session.userId
+  });
+});
+
+// POST /api/dashboard/new-post
+
+// PUT /api/dashboard/:id
+
+// DELETE /api/dashboard/:id
+
 module.exports = router;
