@@ -76,5 +76,18 @@ router.put('/edit-post/:id', async (req, res) => {
 });
 
 // DELETE /api/dashboard/:id
+router.delete('/edit-post/:id', async (req, res) => {
+  try {
+    console.info('delete hit');
+    const delPost = await Post.destroy({ where: { id: req.params.id } });
+    // TODO - Add validation for post id not found
+    console.info(delPost);
+
+    res.status(200).json(delPost);
+    // TODO - Get redirect working from route instead of from frontend js
+    //res.redirect(`/api/dashboard/${req.body.user_id}`);
+  } 
+  catch (err) { res.status(500).json(err.message); }
+});
 
 module.exports = router;

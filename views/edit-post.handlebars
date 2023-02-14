@@ -20,8 +20,7 @@
   <div class="form-div">
     <!-- TODO - Get form submit working without using frontend script -->
     <button type="submit" form="" onclick="savePost()">Save Change</button>
-    <form action="/api/dashboard/{{post.id}}" method="delete" id="delete-form" class="hidden"></form>
-    <button type="submit" form="delete-form" id="btn-delete">Delete Post</button>
+    <button type="submit" id="btn-delete" onclick="deletePost({{post.id}}, {{userId}})">Delete Post</button>
   </div>
   <script src="/js/post.js"></script>
 </section>

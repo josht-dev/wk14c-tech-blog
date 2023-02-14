@@ -32,3 +32,19 @@ const savePost = async () => {
   }
   catch (err) { console.error(err.message); }
 };
+
+// Delete Post
+const deletePost = async (id, userId) => {
+  try {
+    const response = await fetch(`/api/dashboard/edit-post/${id}`, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ user_id: userId}),
+    });
+
+    if (response.ok) {
+      location.assign(`/api/dashboard/${document.getElementById('user_id').value}`);
+    }
+    
+  } catch (err) { console.error(err.message); }
+}
