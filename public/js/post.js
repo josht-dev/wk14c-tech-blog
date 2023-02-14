@@ -26,7 +26,6 @@ const savePost = async () => {
       body: JSON.stringify(bodyObj),
     });
 
-  
     if (response.ok) {
       location.assign(`/api/dashboard/${document.getElementById('user_id').value}`);
     }

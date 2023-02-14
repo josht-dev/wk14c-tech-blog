@@ -52,12 +52,19 @@ router.get('/edit-post/:id', async (req, res) => {
   catch (err) { res.status(500).json(err); }
 });
 
-// POST /api/dashboard/new-post
+// POST /api/dashboard/new-post to add new post
+router.post('/new-post', async (req, res) => {
+  try {
+    const newPost = await Post.create(req.body);
+    res.redirect(`/api/dashboard/${req.body.user_id}`);
+  }
+  catch (err) { res.status(500).json(err); }
+});
+
 
 // PUT /api/dashboard/edit-post/:id
 router.put('/edit-post/:id', async (req, res) => {
   try {
-    console.info(req.body);
     const postData = await Post.update(req.body, {
       where: { id: req.params.id }
     });
