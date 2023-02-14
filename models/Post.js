@@ -20,9 +20,6 @@ Post.init(
     summary: {
       type: DataTypes.STRING(280),
       allowNull: false,
-      validate: {
-        len: [280]
-      }
     },
     content: {
       type: DataTypes.TEXT,

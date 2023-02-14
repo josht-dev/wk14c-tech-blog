@@ -38,20 +38,35 @@ router.get('/:id', async (req, res) => {
 
 // GET /api/dashboard/edit-post/:id to get the user the edit-post page
 router.get('/edit-post/:id', async (req, res) => {
-  // Get post data for edit
-  const post = await Post.findByPk(req.params.id, { raw: true });
+  try {
+    // Get post data for edit
+    const post = await Post.findByPk(req.params.id, { raw: true });
 
-  // Send dashboard handlebars
-  res.render('edit-post', {
-    post,
-    loggedIn: req.session.loggedIn,
-    userId: req.session.userId
-  });
+    // Send dashboard handlebars
+    res.render('edit-post', {
+      post,
+      loggedIn: req.session.loggedIn,
+      userId: req.session.userId
+    });
+  }
+  catch (err) { res.status(500).json(err); }
 });
 
 // POST /api/dashboard/new-post
 
-// PUT /api/dashboard/:id
+// PUT /api/dashboard/edit-post/:id
+router.put('/edit-post/:id', async (req, res) => {
+  try {
+    console.info(req.body);
+    const postData = await Post.update(req.body, {
+      where: { id: req.params.id }
+    });
+    // TODO - Get redirect to point back to dashboard
+    //res.redirect(303, `/api/dashboard/${req.body.user_id}`);
+    res.status(200).json(postData);
+  }
+  catch (err) { res.status(500).json(err); }
+});
 
 // DELETE /api/dashboard/:id
 
