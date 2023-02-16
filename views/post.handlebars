@@ -1,4 +1,8 @@
+{{#unless loggedIn}}
+<section id="post" onclick="closeModals('homepage')">
+{{else}}
 <section id="post">
+{{/unless}}
   <article data-id="{{post.id}}" data-owner-id="{{post.user_id}}">
     <h2>{{post.title}}</h2>
     <span>Posted by {{post.user.name}} on {{format_date post.createdAt}}</span>
