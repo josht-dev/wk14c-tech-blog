@@ -7,58 +7,39 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
-## Table of Contents (Optional)
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+I used this project to create a place where I, and other users, could post our thoughts, tutorials, and technical information to help each other out with our mutual journey through learning to become a full-stack coder. The project was a good experience for creating full-stack applications that connect front-end and backend environments.
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+The following installation steps below can be used to set up the application in a development environment.
+
+- Install MySQL and NodeJS for your OS version
+    - Configure MySQL
+- Clone the repository to your local machine
+- Create a '.env' file in the root directory
+    - Use the database name: 'blog_db'
+    - Add your MySQL user name and password
+- Open a terminal to the root of the cloned repo
+- Run the following command in the terminal: $ npm i
+- Log into MySQL in the terminal and run the following command:
+    - $ source db/schema.sql;
+    - $ exit
+- Run the following commands in the terminal:
+    - $ npm run seed
+    - $ node server.js
+- Open a browser and navigate to 'localhost:3001/'
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+From the homepage, you can view full posts by clicking on them. You can login or register for a new account with the 'login' link at the top right. Once your logged in, you can comment on any posts by viewing the full post. From the 'dashboard' link at the top left, you can view all your posts. You can edit your posts by clicking on it in your dashboard. From there, you can save any changes or delete the post. From the dashboard, you can add new posts as well by using the 'add-post' button.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-Here is a video walkthrough: 
-![screenshot](./assets/images/screenshot.png)
+![screenshot](./assets/screenshot.png)
 
 ## Credits
 
 Used the following site to generate test text content: https://loremipsum.io/
 
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
 ## License
 
 Refer to the LICENSE in the repo for the code. 
 The font (Montserrat) is licensed under the SIL Open Font License (OFL).
-
----
-
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Features
-
-If your project has a lot of features, list them here.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
