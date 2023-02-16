@@ -11,7 +11,7 @@
     <div id="comments">
       <h4>Comments</h4>
       {{#each comments as |comment|}}
-        <p>{{comment.user.name}}: {{comment.content}}</p>
+        <p>{{comment.user.name}} on {{format_date comment.createdAt}}: {{comment.content}}</p>
       {{/each}}
     </div>
   </article>
