@@ -21,9 +21,33 @@ const commentData = [
   },
   {
     content: 'There is a typo...',
-    user_id: 5,
+    user_id: 6,
     post_id: 5,
     createdAt: '2023-01-20 05:35:12'
+  },
+  {
+    content: 'Woop! First!',
+    user_id: 4,
+    post_id: 1,
+    createdAt: '2023-01-17 18:09:46'
+  },
+  {
+    content: 'Woop! First!',
+    user_id: 2,
+    post_id: 2,
+    createdAt: '2023-01-17 18:09:46'
+  },
+  {
+    content: 'Woop! First!',
+    user_id: 4,
+    post_id: 3,
+    createdAt: '2023-01-17 18:09:46'
+  },
+  {
+    content: 'Woop! First!',
+    user_id: 4,
+    post_id: 4,
+    createdAt: '2023-01-17 18:09:46'
   }
 ];
 
